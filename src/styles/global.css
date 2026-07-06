@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* GeekieNews — editorial paper, toolchain red accent */
+/* GeekieNews: editorial paper, toolchain red accent */
 @theme {
   --color-paper: #eceae5;
   --color-paper-2: #e3e0d9;

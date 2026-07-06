@@ -1,6 +1,6 @@
 # GeekieNews
 
-Publication on **AI software reliability** — essays, audits, and tool releases.
+Publication on **AI software reliability**: essays, audits, and tool releases.
 
 **Thesis:** static analysis, never the model.
 
@@ -25,7 +25,7 @@ Articles are git-based Markdoc files under `src/content/articles/`. Keystatic pr
 2. Open `/keystatic`
 3. Create or edit an article
 4. Commit the generated `.mdoc` files
-5. Push — GitHub Actions builds and deploys to geekienews.com
+5. Push. GitHub Actions builds and deploys to geekienews.com
 
 ### GitHub storage (optional)
 
@@ -57,4 +57,4 @@ Push to `main`. Requires GitHub Pages enabled (source: GitHub Actions) and DNS f
 
 ## Part of the toolchain
 
-By [Oluwasegun Olumbe](https://segunolumbe.com) — [gate](https://www.npmjs.com/package/@nugehs/gate) · [repoctx](https://nugehs.github.io/repoctx-web/) · [tieline](https://www.npmjs.com/package/@nugehs/tieline) · [bouncer](https://nugehs.github.io/bouncer-web/) · [aiglare](https://nugehs.github.io/aiglare-web/)
+By [Oluwasegun Olumbe](https://segunolumbe.com). [gate](https://www.npmjs.com/package/@nugehs/gate) · [repoctx](https://nugehs.github.io/repoctx-web/) · [tieline](https://www.npmjs.com/package/@nugehs/tieline) · [bouncer](https://nugehs.github.io/bouncer-web/) · [aiglare](https://nugehs.github.io/aiglare-web/)

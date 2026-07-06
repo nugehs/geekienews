@@ -8,7 +8,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 const cmsEnabled = process.env.KEYSTATIC_CMS !== "0";
 
-// https://geekienews.com — custom domain on GitHub Pages
+// https://geekienews.com - custom domain on GitHub Pages
 export default defineConfig({
   site: "https://geekienews.com",
   base: "/",
