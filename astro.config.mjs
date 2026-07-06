@@ -7,11 +7,13 @@ import keystatic from "@keystatic/astro";
 import tailwindcss from "@tailwindcss/vite";
 
 const cmsEnabled = process.env.KEYSTATIC_CMS !== "0";
+const projectBase = process.env.GITHUB_PAGES_PROJECT === "true";
 
-// https://geekienews.com - custom domain on GitHub Pages
+// Project page: nugehs.github.io/geekienews
+// Custom domain: geekienews.com (set GITHUB_PAGES_PROJECT=false in workflow)
 export default defineConfig({
-  site: "https://geekienews.com",
-  base: "/",
+  site: projectBase ? "https://nugehs.github.io" : "https://geekienews.com",
+  base: projectBase ? "/geekienews/" : "/",
   trailingSlash: "always",
   integrations: [
     react(),

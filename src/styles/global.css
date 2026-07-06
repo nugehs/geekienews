@@ -1,6 +1,38 @@
 @import "tailwindcss";
 
-/* GeekieNews: editorial paper, toolchain red accent */
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/fonts/Ubuntu-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/fonts/Ubuntu-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url("../assets/fonts/UbuntuMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url("../assets/fonts/UbuntuMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* GeekieNews: Ubuntu type, brand blue + yellow */
 @theme {
   --color-paper: #eceae5;
   --color-paper-2: #e3e0d9;
@@ -13,13 +45,18 @@
   --color-muted: #86837a;
   --color-faint: #9b988f;
 
-  --color-accent: #dc0000;
-  --color-accent-deep: #b00000;
-  --color-accent-soft: #fde8e8;
+  --color-brand: #004795;
+  --color-brand-deep: #003366;
+  --color-brand-soft: #e8f0f8;
+  --color-brand-yellow: #e8b820;
 
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Spectral", Georgia, "Times New Roman", serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
+  --color-accent: #004795;
+  --color-accent-deep: #003366;
+  --color-accent-soft: #e8f0f8;
+
+  --font-display: "Ubuntu", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Ubuntu", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
     monospace;
 }
 
@@ -36,7 +73,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+  background: color-mix(in srgb, var(--color-brand-yellow) 35%, transparent);
 }
 
 .font-display {
@@ -50,6 +87,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  color: var(--color-brand-yellow);
 }
 
 .prose-news {
@@ -101,7 +139,7 @@ body {
   font-family: var(--font-mono);
   font-size: 0.875rem;
   line-height: 1.6;
-  background: var(--color-ink);
+  background: var(--color-brand);
   color: var(--color-paper);
   padding: 1.25rem;
   border-radius: 0.5rem;
@@ -114,7 +152,7 @@ body {
 }
 
 .prose-news blockquote {
-  border-left: 3px solid var(--color-accent);
+  border-left: 3px solid var(--color-brand-yellow);
   padding-left: 1.25rem;
   font-style: italic;
   color: var(--color-ink);
@@ -138,13 +176,18 @@ body {
   background-image:
     linear-gradient(
       to right,
-      color-mix(in srgb, var(--color-ink) 4%, transparent) 1px,
+      color-mix(in srgb, var(--color-brand) 5%, transparent) 1px,
       transparent 1px
     ),
     linear-gradient(
       to bottom,
-      color-mix(in srgb, var(--color-ink) 4%, transparent) 1px,
+      color-mix(in srgb, var(--color-brand) 5%, transparent) 1px,
       transparent 1px
     );
   background-size: 44px 44px;
+}
+
+.brand-logo {
+  height: 2rem;
+  width: auto;
 }

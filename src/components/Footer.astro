@@ -1,4 +1,6 @@
 ---
+import { asset } from "../lib/asset";
+
 const cols = [
   {
     title: "Publication",
@@ -33,11 +35,14 @@ const cols = [
   <div class="mx-auto max-w-6xl px-5 py-14">
     <div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
       <div>
-        <a href="/" class="flex items-center gap-2.5">
-          <img src="/logo.svg" alt="" width="30" height="30" class="rounded-lg" />
-          <span class="font-display text-lg font-bold tracking-tight text-ink"
-            >GeekieNews</span
-          >
+        <a href="/" class="inline-flex items-center">
+          <img
+            src={asset("images/geekienews-logo.png")}
+            alt="GeekieNews"
+            width="1972"
+            height="600"
+            class="brand-logo"
+          />
         </a>
         <p class="mt-4 max-w-xs text-sm leading-relaxed text-muted">
           When AI writes software, who watches the AI? Essays and audits on
@@ -54,7 +59,7 @@ const cols = [
                 <li>
                   <a
                     href={link.href}
-                    class="text-sm text-muted transition-colors hover:text-accent"
+                    class="text-sm text-muted transition-colors hover:text-brand"
                   >
                     {link.label}
                   </a>
@@ -69,7 +74,7 @@ const cols = [
     <div class="mt-12 border-t border-line pt-6 text-sm text-faint">
       <p class="leading-relaxed">
         GeekieNews by
-        <a href="https://segunolumbe.com" class="text-muted transition-colors hover:text-accent"
+        <a href="https://segunolumbe.com" class="text-muted transition-colors hover:text-brand"
           >Oluwasegun Olumbe</a
         >. Part of a deterministic trust layer for AI-assisted development:
         <span class="font-mono text-xs">static analysis, never the model.</span>
