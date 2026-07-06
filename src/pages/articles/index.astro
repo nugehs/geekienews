@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import { getCollection } from "astro:content";
+import { sortByDate } from "../../lib/articles";
+
+const articles = sortByDate(
+  await getCollection("articles", ({ data }) => !data.draft),
+);
+---
+
+<Layout
+  title="Articles — GeekieNews"
+  description="Essays, audits, comparisons, and releases on AI software reliability."
+>
+  <div class="mx-auto max-w-6xl px-5 py-16">
+    <header class="mb-12 border-b border-line pb-10">
+      <p class="kicker text-accent">Archive</p>
+      <h1 class="font-display mt-3 text-4xl font-bold tracking-tight text-ink">
+        Articles
+      </h1>
+      <p class="mt-4 max-w-2xl text-muted">
+        Long-form writing on static analysis, agent harnesses, and the missing
+        verification layer between AI-generated code and production.
+      </p>
+    </header>
+
+    {
+      articles.length === 0 ? (
+        <p class="text-muted">No articles yet. Open the CMS at /keystatic to publish.</p>
+      ) : (
+        <div class="grid gap-6 md:grid-cols-2">
+          {articles.map((article) => (
+            <div class="relative">
+              <ArticleCard article={article} />
+            </div>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</Layout>

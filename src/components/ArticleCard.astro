@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { slugFromId } from "../lib/articles";
+
+interface Props {
+  article: CollectionEntry<"articles">;
+}
+
+const { article } = Astro.props;
+const { title, description, publishDate, category } = article.data;
+const slug = slugFromId(article.id);
+
+const formattedDate = publishDate.toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+});
+---
+
+<article class="group relative flex flex-col rounded-xl border border-line bg-card p-6 transition-shadow hover:shadow-md">
+  <p class="kicker text-accent">{category}</p>
+  <h2 class="font-display mt-3 text-xl font-bold tracking-tight text-ink group-hover:text-accent">
+    <a href={`/articles/${slug}/`} class="after:absolute after:inset-0">
+      {title}
+    </a>
+  </h2>
+  <p class="mt-3 flex-1 text-sm leading-relaxed text-muted">{description}</p>
+  <p class="mt-5 font-mono text-xs text-faint">
+    <time datetime={publishDate.toISOString()}>{formattedDate}</time>
+  </p>
+</article>

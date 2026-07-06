@@ -1,0 +1,80 @@
+---
+const cols = [
+  {
+    title: "Publication",
+    links: [
+      { label: "All articles", href: "/articles/" },
+      { label: "About", href: "/about/" },
+      { label: "RSS", href: "/rss.xml" },
+    ],
+  },
+  {
+    title: "Toolchain",
+    links: [
+      { label: "gate", href: "https://www.npmjs.com/package/@nugehs/gate" },
+      { label: "repoctx", href: "https://nugehs.github.io/repoctx-web/" },
+      { label: "tieline", href: "https://www.npmjs.com/package/@nugehs/tieline" },
+      { label: "bouncer", href: "https://nugehs.github.io/bouncer-web/" },
+      { label: "aiglare", href: "https://nugehs.github.io/aiglare-web/" },
+    ],
+  },
+  {
+    title: "Elsewhere",
+    links: [
+      { label: "segunolumbe.com", href: "https://segunolumbe.com" },
+      { label: "GitHub", href: "https://github.com/nugehs/geekienews" },
+      { label: "MCP registry", href: "https://registry.modelcontextprotocol.io/?q=nugehs" },
+    ],
+  },
+];
+---
+
+<footer class="border-t border-line bg-paper-2">
+  <div class="mx-auto max-w-6xl px-5 py-14">
+    <div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+      <div>
+        <a href="/" class="flex items-center gap-2.5">
+          <img src="/logo.svg" alt="" width="30" height="30" class="rounded-lg" />
+          <span class="font-display text-lg font-bold tracking-tight text-ink"
+            >GeekieNews</span
+          >
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-muted">
+          When AI writes software, who watches the AI? Essays and audits on
+          deterministic verification for agent-generated code.
+        </p>
+      </div>
+
+      {
+        cols.map((col) => (
+          <div>
+            <h4 class="kicker text-faint">{col.title}</h4>
+            <ul class="mt-4 space-y-2.5">
+              {col.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="text-sm text-muted transition-colors hover:text-accent"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 border-t border-line pt-6 text-sm text-faint">
+      <p class="leading-relaxed">
+        GeekieNews by
+        <a href="https://segunolumbe.com" class="text-muted transition-colors hover:text-accent"
+          >Oluwasegun Olumbe</a
+        >. Part of a deterministic trust layer for AI-assisted development —
+        <span class="font-mono text-xs">static analysis, never the model.</span>
+      </p>
+      <p class="mt-4">© {new Date().getFullYear()} Oluwasegun Olumbe</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,45 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import { getCollection } from "astro:content";
+import { sortByDate } from "../../lib/articles";
+
+export async function getStaticPaths() {
+  const articles = await getCollection("articles", ({ data }) => !data.draft);
+  const tags = [...new Set(articles.flatMap((a) => a.data.tags))];
+
+  return tags.map((tag) => ({
+    params: { tag },
+    props: {
+      tag,
+      articles: sortByDate(articles.filter((a) => a.data.tags.includes(tag))),
+    },
+  }));
+}
+
+const { tag, articles } = Astro.props;
+---
+
+<Layout
+  title={`${tag} — GeekieNews`}
+  description={`Articles tagged “${tag}” on GeekieNews.`}
+>
+  <div class="mx-auto max-w-6xl px-5 py-16">
+    <header class="mb-12 border-b border-line pb-10">
+      <p class="kicker text-accent">Tag</p>
+      <h1 class="font-display mt-3 text-4xl font-bold tracking-tight text-ink">
+        {tag}
+      </h1>
+    </header>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {
+        articles.map((article) => (
+          <div class="relative">
+            <ArticleCard article={article} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

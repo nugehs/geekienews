@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import { getCollection } from "astro:content";
+import { sortByDate } from "../lib/articles";
+
+const all = await getCollection("articles", ({ data }) => !data.draft);
+const articles = sortByDate(all);
+const featured = articles.find((a) => a.data.featured) ?? articles[0];
+const rest = articles.filter((a) => a.id !== featured?.id);
+---
+
+<Layout>
+  <section class="border-b border-line bg-grid">
+    <div class="mx-auto max-w-6xl px-5 py-20">
+      <p class="kicker text-accent">AI software reliability</p>
+      <h1 class="font-display mt-4 max-w-3xl text-4xl font-bold tracking-tight text-ink md:text-6xl">
+        When AI writes software, who watches the AI?
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+        GeekieNews publishes essays, audits, and tool releases on deterministic
+        verification for agent-generated code —
+        <span class="font-mono text-sm text-ink">static analysis, never the model.</span>
+      </p>
+    </div>
+  </section>
+
+  {
+    featured && (
+      <section class="mx-auto max-w-6xl px-5 py-16">
+        <div class="mb-8 flex items-end justify-between gap-4">
+          <h2 class="font-display text-2xl font-bold text-ink">Featured</h2>
+          <a href="/articles/" class="text-sm font-medium text-muted hover:text-accent">
+            All articles →
+          </a>
+        </div>
+        <div class="relative">
+          <ArticleCard article={featured} />
+        </div>
+      </section>
+    )
+  }
+
+  {
+    rest.length > 0 && (
+      <section class="mx-auto max-w-6xl px-5 pb-20">
+        <h2 class="font-display mb-8 text-2xl font-bold text-ink">Latest</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          {rest.map((article) => (
+            <div class="relative">
+              <ArticleCard article={article} />
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+</Layout>

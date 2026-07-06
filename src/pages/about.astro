@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="About — GeekieNews"
+  description="GeekieNews is a publication on AI software reliability by Oluwasegun Olumbe."
+>
+  <div class="mx-auto max-w-3xl px-5 py-16">
+    <header class="border-b border-line pb-10">
+      <p class="kicker text-accent">About</p>
+      <h1 class="font-display mt-4 text-4xl font-bold tracking-tight text-ink">
+        Static analysis, never the model
+      </h1>
+    </header>
+
+    <div class="prose-news mt-10">
+      <p>
+        GeekieNews is the publication arm of a simple thesis: when AI agents write
+        software, deterministic analysis must sit between generation and deployment.
+        Not vibes. Not self-review. Machine-verifiable checks with explainable
+        evidence.
+      </p>
+      <p>
+        I write about AI software reliability infrastructure — the harness around
+        agents: codebase intelligence, contract drift, compliance controls, AI
+        governance, and unified verdicts. The open-source toolchain (
+        <a href="https://www.npmjs.com/package/@nugehs/gate">gate</a>,
+        <a href="https://nugehs.github.io/repoctx-web/">repoctx</a>,
+        <a href="https://www.npmjs.com/package/@nugehs/tieline">tieline</a>,
+        <a href="https://nugehs.github.io/bouncer-web/">bouncer</a>,
+        <a href="https://nugehs.github.io/aiglare-web/">aiglare</a>
+        ) ships the tools. GeekieNews ships the argument.
+      </p>
+      <h2>What we publish</h2>
+      <ul>
+        <li><strong>Essays</strong> — architecture and philosophy</li>
+        <li><strong>Audits</strong> — findings from running static analysis on OSS AI repos</li>
+        <li><strong>Comparisons</strong> — how this approach differs from incumbents</li>
+        <li><strong>Releases</strong> — tool changelog narratives worth reading</li>
+      </ul>
+      <h2>CMS</h2>
+      <p>
+        Content is managed with
+        <a href="https://keystatic.com">Keystatic</a> — git-based, local-first.
+        Run <code>npm run dev</code> and open <a href="/keystatic">/keystatic</a> to
+        edit. Articles live as Markdoc in the repo; GitHub Pages builds a static site
+        on every push.
+      </p>
+      <p>
+        — <a href="https://segunolumbe.com">Oluwasegun Olumbe</a>, London
+      </p>
+    </div>
+  </div>
+</Layout>
