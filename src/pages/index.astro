@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import { getCollection } from "astro:content";
 import { sortByDate } from "../lib/articles";
+import { asset } from "../lib/asset";
 
 const all = await getCollection("articles", ({ data }) => !data.draft);
 const articles = sortByDate(all);
@@ -30,7 +31,7 @@ const rest = articles.filter((a) => a.id !== featured?.id);
       <section class="mx-auto max-w-6xl px-5 py-16">
         <div class="mb-8 flex items-end justify-between gap-4">
           <h2 class="font-display text-2xl font-bold text-ink">Featured</h2>
-          <a href="/articles/" class="text-sm font-medium text-muted hover:text-accent">
+          <a href={asset("articles/")} class="text-sm font-medium text-muted hover:text-accent">
             All articles →
           </a>
         </div>

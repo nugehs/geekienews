@@ -55,6 +55,8 @@ Each article has: title, description, publishDate, author, category (`essay` \| 
 
 Push to `main`. Requires GitHub Pages enabled (source: GitHub Actions) and DNS for `geekienews.com` pointing at Pages.
 
+The site builds with `site: https://geekienews.com` and `base: /` (`GITHUB_PAGES_PROJECT=false`). `public/CNAME` pins the custom domain. To fall back to the project URL (`nugehs.github.io/geekienews`), set `GITHUB_PAGES_PROJECT=true` and remove `public/CNAME`.
+
 ## Part of the toolchain
 
 By [Oluwasegun Olumbe](https://segunolumbe.com). [gate](https://www.npmjs.com/package/@nugehs/gate) · [repoctx](https://nugehs.github.io/repoctx-web/) · [tieline](https://www.npmjs.com/package/@nugehs/tieline) · [bouncer](https://nugehs.github.io/bouncer-web/) · [aiglare](https://nugehs.github.io/aiglare-web/)

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { asset } from "../lib/asset";
 ---
 
 <Layout
@@ -43,7 +44,7 @@ import Layout from "../layouts/Layout.astro";
       <p>
         Content is managed with
         <a href="https://keystatic.com">Keystatic</a>, git-based and local-first.
-        Run <code>npm run dev</code> and open <a href="/keystatic">/keystatic</a> to
+        Run <code>npm run dev</code> and open <a href={asset("keystatic")}>/keystatic</a> to
         edit. Articles live as Markdoc in the repo; GitHub Pages builds a static site
         on every push.
       </p>

@@ -5,9 +5,9 @@ const cols = [
   {
     title: "Publication",
     links: [
-      { label: "All articles", href: "/articles/" },
-      { label: "About", href: "/about/" },
-      { label: "RSS", href: "/rss.xml" },
+      { label: "All articles", href: asset("articles/") },
+      { label: "About", href: asset("about/") },
+      { label: "RSS", href: asset("rss.xml") },
     ],
   },
   {
@@ -35,7 +35,7 @@ const cols = [
   <div class="mx-auto max-w-6xl px-5 py-14">
     <div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
       <div>
-        <a href="/" class="inline-flex items-center">
+        <a href={asset()} class="inline-flex items-center">
           <img
             src={asset("images/geekienews-logo.png")}
             alt="GeekieNews"

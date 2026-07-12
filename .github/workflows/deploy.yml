@@ -23,7 +23,7 @@ jobs:
       - name: Build with Astro
         uses: withastro/action@v3
         env:
-          GITHUB_PAGES_PROJECT: "true"
+          GITHUB_PAGES_PROJECT: "false"
 
   deploy:
     needs: build

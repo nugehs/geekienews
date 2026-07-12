@@ -2,15 +2,15 @@
 import { asset } from "../lib/asset";
 
 const nav = [
-  { label: "Articles", href: "/articles/" },
-  { label: "About", href: "/about/" },
+  { label: "Articles", href: asset("articles/") },
+  { label: "About", href: asset("about/") },
 ];
-const cms = import.meta.env.DEV ? "/keystatic" : null;
+const cms = import.meta.env.DEV ? asset("keystatic") : null;
 ---
 
 <header class="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-md">
   <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-    <a href="/" class="flex items-center">
+    <a href={asset()} class="flex items-center">
       <img
         src={asset("images/geekienews-logo.png")}
         alt="GeekieNews"
