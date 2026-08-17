@@ -59,4 +59,4 @@ The site builds with `site: https://geekienews.com` and `base: /` (`GITHUB_PAGES
 
 ## Part of the toolchain
 
-By [Oluwasegun Olumbe](https://segunolumbe.com). [gate](https://www.npmjs.com/package/@nugehs/gate) · [repoctx](https://nugehs.github.io/repoctx-web/) · [tieline](https://www.npmjs.com/package/@nugehs/tieline) · [bouncer](https://nugehs.github.io/bouncer-web/) · [aiglare](https://nugehs.github.io/aiglare-web/)
+By [Oluwasegun Olumbe](https://segunolumbe.com). [Òtítọ́](https://bashbop.github.io/otito/) is the independent trust harness behind the context, validation, ownership, CI, and review-evidence work described here.
