@@ -1,0 +1,37 @@
+---
+title: Òtítọ́ Is Now Solumbe
+description: The trust harness behind the verification, routing and merge-gate work on this site has a new name. Here is the short history of why, what changed for anyone using it, and why the version numbers skip from 1 to 3 to 4.
+publishDate: 2026-10-24
+author: Oluwasegun Olumbe
+category: release
+tags:
+  - solumbe
+  - ai-agents
+  - release
+draft: false
+featured: false
+---
+
+The open-source trust harness I write about here is now called **Solumbe**. If you have read the earlier articles on verification layers, merge-gate testing or model routing, this is the same tool under its third and final name.
+
+## The names, in order
+
+It started as **repoctx** in May 2026, published as `@nugehs/repoctx` because the bare name was already taken on npm. In July it became **Òtítọ́** at version 1.0.0, when stewardship moved to Bashbop Ltd and the package became `@bashbop/otito`. At the end of September, version 4.0.0 renamed it to **Solumbe**.
+
+The last rename was a name clash. Òtítọ́ reads well, but it collided with another name in a way that was going to cause confusion, so I moved before anything depended on it being unambiguous. Solumbe is distinct, and it is the name it keeps.
+
+## What changed if you use it
+
+The cutover was clean, with no fallback to the old names. The package is `@bashbop/solumbe`, the MCP server identity is `io.github.BASHBOP/solumbe`, and the commands are the same ones. Behaviour did not change with the rename: 4.0.0 does exactly what the previous release did, under new names. The one concession to continuity is that it still reads an old `~/.config/otito` config file if it finds one, so an existing setup does not break on upgrade.
+
+If you had the old package installed, point it at `@bashbop/solumbe` and carry on. The old MCP registry listing is marked deprecated and points at the new one.
+
+## Why there is no version 2
+
+The numbers look like a gap: 1.x, then 3.x, then 4.x, with no 2.x. That is deliberate. The `v2` tags belong to the earlier repoctx releases, which reached 2.6.0 before the first rename. To avoid two different things ever sharing a version number, Òtítọ́ went from 1.15.0 straight to 3.0.0, and Solumbe continued from there. The current release is 4.8.0.
+
+## What it does now
+
+Solumbe is a local-first, deterministic, model-agnostic trust layer for AI-assisted development. It runs beside Claude Code, Codex, Cursor or Gemini rather than replacing them, with no server, no account, and no code leaving the machine. The tagline is the whole idea: models generate the change, and Solumbe proves whether it is safe to merge.
+
+The recent work, and the next article here, is about measuring how well it actually reads a repository, by replaying real git history rather than trusting a corpus I wrote myself. New name, same boundary: the model proposes, and something deterministic and auditable decides whether it ships.
