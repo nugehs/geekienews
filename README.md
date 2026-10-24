@@ -59,4 +59,4 @@ The site builds with `site: https://geekienews.com` and `base: /` (`GITHUB_PAGES
 
 ## Part of the toolchain
 
-By [Oluwasegun Olumbe](https://segunolumbe.com). [Òtítọ́](https://bashbop.github.io/otito/) is the independent trust harness behind the context, validation, ownership, CI, and review-evidence work described here.
+By [Oluwasegun Olumbe](https://segunolumbe.com). [Solumbe](https://bashbop.github.io/solumbe/) is the independent trust harness behind the context, validation, ownership, CI, and review-evidence work described here.

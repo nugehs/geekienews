@@ -26,7 +26,7 @@ A router needs two things it cannot get from one place.
 
 It needs to know what the request is asking for, which is a language question. And it needs to know what the repository will do about it, which is a structural question with a deterministic answer: how contained the affected code is, how many owners it has, whether it touches paths that carry real risk.
 
-We already had the second half. [Òtítọ́](https://github.com/BASHBOP/otito) computes an agent-experience score, containment, and canonical risk flags from repository state alone, with no network and no model.
+We already had the second half. [Solumbe](https://github.com/BASHBOP/solumbe) (then called Òtítọ́) computes an agent-experience score, containment, and canonical risk flags from repository state alone, with no network and no model.
 
 For the first half we used [Jev](https://docs.typesafe.ai/concepts/system-one), TypeSafe's System One model. A System One model does not write prose. You give it a state and a set of typed questions, and it returns typed answers with calibrated probabilities: a Choice between named options, a Score along ordered levels, or a Noul, which is the probability that a yes-or-no statement is true.
 

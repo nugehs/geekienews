@@ -1,0 +1,308 @@
+{
+  "version": 5,
+  "generatedAt": "2026-07-12T14:13:19.470Z",
+  "fingerprint": "33:4813209:1783377538246:35a1445",
+  "map": {
+    "ok": true,
+    "repo": {
+      "root": "/Users/segzy/dev/geekienews",
+      "name": "geekienews",
+      "package": {
+        "name": "geekienews",
+        "version": "0.1.0",
+        "type": "module",
+        "private": true
+      },
+      "git": {
+        "available": true,
+        "root": "/Users/segzy/dev/geekienews",
+        "branch": "main",
+        "commit": "bc26e0e",
+        "clean": true,
+        "changes": 0,
+        "status": "## main...origin/main"
+      },
+      "fileCount": 33,
+      "sourceFileCount": 6,
+      "languages": [
+        {
+          "language": "TypeScript",
+          "count": 5
+        },
+        {
+          "language": "JSON",
+          "count": 3
+        },
+        {
+          "language": "JavaScript",
+          "count": 1
+        },
+        {
+          "language": "Markdown",
+          "count": 1
+        },
+        {
+          "language": "YAML",
+          "count": 1
+        }
+      ],
+      "entrypoints": []
+    },
+    "summary": {
+      "routes": 0,
+      "apiRoutes": 0,
+      "controllers": 0,
+      "services": 0,
+      "modules": 0,
+      "components": 0,
+      "hooks": 0,
+      "apiClients": 0,
+      "dtos": 0,
+      "schemas": 0,
+      "tests": 0,
+      "symbols": 9,
+      "dataAccessFiles": 0,
+      "dataAccessHits": 0
+    },
+    "domains": [
+      {
+        "name": "lib",
+        "fileCount": 2,
+        "kinds": [
+          {
+            "kind": "source",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "astro.config",
+        "fileCount": 1,
+        "kinds": [
+          {
+            "kind": "source",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "content.config",
+        "fileCount": 1,
+        "kinds": [
+          {
+            "kind": "source",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "keystatic.config",
+        "fileCount": 1,
+        "kinds": [
+          {
+            "kind": "source",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "rss.xml",
+        "fileCount": 1,
+        "kinds": [
+          {
+            "kind": "source",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "files": [
+      {
+        "path": "astro.config.mjs",
+        "kind": "source",
+        "domain": "astro.config",
+        "domains": [
+          "astro.config"
+        ],
+        "httpMethods": [],
+        "imports": [
+          "astro/config",
+          "@astrojs/react",
+          "@astrojs/markdoc",
+          "@astrojs/sitemap",
+          "@keystatic/astro",
+          "@tailwindcss/vite"
+        ],
+        "exports": [
+          "default"
+        ],
+        "symbols": [
+          {
+            "type": "const",
+            "name": "cmsEnabled",
+            "line": 9
+          },
+          {
+            "type": "const",
+            "name": "projectBase",
+            "line": 10
+          }
+        ],
+        "isVendor": false
+      },
+      {
+        "path": "keystatic.config.ts",
+        "kind": "source",
+        "domain": "keystatic.config",
+        "domains": [
+          "keystatic.config"
+        ],
+        "httpMethods": [],
+        "imports": [
+          "@keystatic/core"
+        ],
+        "exports": [
+          "default"
+        ],
+        "symbols": [
+          {
+            "type": "const",
+            "name": "repo",
+            "line": 3
+          }
+        ],
+        "isVendor": false
+      },
+      {
+        "path": "src/content.config.ts",
+        "kind": "source",
+        "domain": "content.config",
+        "domains": [
+          "content.config"
+        ],
+        "httpMethods": [],
+        "imports": [
+          "astro:content",
+          "astro/loaders"
+        ],
+        "exports": [
+          "collections"
+        ],
+        "symbols": [
+          {
+            "type": "const",
+            "name": "articles",
+            "line": 4
+          },
+          {
+            "type": "const",
+            "name": "collections",
+            "line": 20
+          }
+        ],
+        "isVendor": false
+      },
+      {
+        "path": "src/lib/articles.ts",
+        "kind": "source",
+        "domain": "lib",
+        "domains": [
+          "lib"
+        ],
+        "httpMethods": [],
+        "imports": [],
+        "exports": [
+          "slugFromId",
+          "sortByDate"
+        ],
+        "symbols": [
+          {
+            "type": "function",
+            "name": "slugFromId",
+            "line": 2
+          },
+          {
+            "type": "function",
+            "name": "sortByDate",
+            "line": 6
+          }
+        ],
+        "isVendor": false
+      },
+      {
+        "path": "src/lib/asset.ts",
+        "kind": "source",
+        "domain": "lib",
+        "domains": [
+          "lib"
+        ],
+        "httpMethods": [],
+        "imports": [],
+        "exports": [
+          "asset"
+        ],
+        "symbols": [
+          {
+            "type": "function",
+            "name": "asset",
+            "line": 2
+          }
+        ],
+        "isVendor": false
+      },
+      {
+        "path": "src/pages/rss.xml.ts",
+        "kind": "source",
+        "domain": "rss.xml",
+        "domains": [
+          "rss.xml"
+        ],
+        "httpMethods": [],
+        "imports": [
+          "@astrojs/rss",
+          "astro:content",
+          "../lib/articles"
+        ],
+        "exports": [
+          "GET"
+        ],
+        "symbols": [
+          {
+            "type": "function",
+            "name": "GET",
+            "line": 5
+          }
+        ],
+        "isVendor": false
+      }
+    ],
+    "tokenEstimate": {
+      "fullJson": 701,
+      "estimated": true,
+      "method": "ceil(characters / 4)",
+      "total": 691,
+      "sections": [
+        {
+          "name": "repo",
+          "tokens": 132,
+          "characters": 526
+        },
+        {
+          "name": "summary",
+          "tokens": 48,
+          "characters": 189
+        },
+        {
+          "name": "domains",
+          "tokens": 94,
+          "characters": 373
+        },
+        {
+          "name": "files",
+          "tokens": 417,
+          "characters": 1666
+        }
+      ]
+    }
+  }
+}

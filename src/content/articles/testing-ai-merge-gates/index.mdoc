@@ -66,7 +66,7 @@ This is closer to testing a compiler or policy engine than benchmarking a langua
 
 ## A practical seven-case matrix
 
-[Òtítọ́ v1.7.0](https://github.com/BASHBOP/otito/releases/tag/v1.7.0) includes a small gate-effectiveness corpus. It runs the real staged local gate inside isolated temporary Git repositories. The current suite contains one valid control and six adversarial cases:
+[Solumbe v1.7.0](https://github.com/BASHBOP/solumbe/releases/tag/v1.7.0), then published under the name Òtítọ́, includes a small gate-effectiveness corpus. It runs the real staged local gate inside isolated temporary Git repositories. The current suite contains one valid control and six adversarial cases:
 
 1. **Valid control** — a normal source change with validation and policy in place must pass.
 2. **Secret file** — adding `.env.production` must fail the secret-safety check.
@@ -76,7 +76,7 @@ This is closer to testing a compiler or policy engine than benchmarking a langua
 6. **Unverified ownership** — company governance must not allow a local process to self-certify GitHub ownership and review controls.
 7. **Scope drift** — a reporting export added for an unrelated request must fail the required intent-to-diff convergence score.
 
-On 17 August 2026, the suite produced seven expected results: the valid control passed and all six unsafe cases were blocked at their named checks. The cases and thresholds are public in the [evaluation corpus](https://github.com/BASHBOP/otito/blob/main/evals/corpus.json), and the command is reproducible:
+On 17 August 2026, the suite produced seven expected results: the valid control passed and all six unsafe cases were blocked at their named checks. The cases and thresholds are public in the [evaluation corpus](https://github.com/BASHBOP/solumbe/blob/main/evals/corpus.json), and the command is reproducible (1.7.0 was published under the old package name):
 
 ```
 npx --yes --package=@bashbop/otito@1.7.0 -- otito eval --gate-effectiveness
